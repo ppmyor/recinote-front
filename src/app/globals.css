@@ -3,6 +3,23 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Recinote auth surface palette */
+  --color-navy-950: #0b1220;
+  --color-navy-900: #121a2b;
+  --color-navy-800: #1a2338;
+  --color-navy-700: #232d47;
+  --color-navy-600: #2e3a58;
+  --color-navy-400: #6b7896;
+  --color-navy-300: #a4afc7;
+  --color-navy-100: #e7ebf3;
+
+  --color-brand-blue-400: #60a5fa;
+  --color-brand-blue-500: #3b82f6;
+  --color-brand-blue-600: #2563eb;
+
+  --color-error-400: #f87171;
+  --color-error-500: #ef4444;
 }
 
 @theme inline {
@@ -10,6 +27,22 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-navy-950: var(--color-navy-950);
+  --color-navy-900: var(--color-navy-900);
+  --color-navy-800: var(--color-navy-800);
+  --color-navy-700: var(--color-navy-700);
+  --color-navy-600: var(--color-navy-600);
+  --color-navy-400: var(--color-navy-400);
+  --color-navy-300: var(--color-navy-300);
+  --color-navy-100: var(--color-navy-100);
+
+  --color-brand-blue-400: var(--color-brand-blue-400);
+  --color-brand-blue-500: var(--color-brand-blue-500);
+  --color-brand-blue-600: var(--color-brand-blue-600);
+
+  --color-error-400: var(--color-error-400);
+  --color-error-500: var(--color-error-500);
 }
 
 @media (prefers-color-scheme: dark) {
