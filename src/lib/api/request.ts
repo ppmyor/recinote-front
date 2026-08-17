@@ -25,6 +25,10 @@ export class ApiError extends Error {
   }
 }
 
+export function getApiErrorMessage(err: unknown, fallback: string) {
+  return err instanceof ApiError ? err.message : fallback;
+}
+
 export async function apiRequest<T>(config: AxiosRequestConfig): Promise<T> {
   try {
     const response = await apiClient.request<ApiSuccessEnvelope<T>>(config);

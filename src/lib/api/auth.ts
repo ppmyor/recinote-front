@@ -30,3 +30,12 @@ export function checkPasswordMatch(payload: CheckPasswordMatchPayload) {
     data: payload,
   });
 }
+
+export interface LoginPayload {
+  email: string;
+  password: string;
+}
+
+export function login(payload: LoginPayload) {
+  return apiRequest<User>({ method: "POST", url: "/auth/login", data: payload });
+}

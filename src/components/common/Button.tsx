@@ -22,6 +22,23 @@ const sizeStyles: Record<ButtonSize, string> = {
   sm: "h-9 px-3 text-xs rounded-md",
 };
 
+export function buttonClassName({
+  variant = "primary",
+  size = "md",
+  fullWidth = false,
+  className,
+}: Pick<ButtonProps, "variant" | "size" | "fullWidth" | "className">) {
+  return cn(
+    "inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors",
+    "focus:outline-none focus:ring-2 focus:ring-brand-blue-400 focus:ring-offset-0",
+    "disabled:opacity-50 disabled:cursor-not-allowed",
+    variantStyles[variant],
+    sizeStyles[size],
+    fullWidth && "w-full",
+    className,
+  );
+}
+
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
@@ -40,15 +57,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         disabled={disabled || loading}
-        className={cn(
-          "inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors",
-          "focus:outline-none focus:ring-2 focus:ring-brand-blue-400 focus:ring-offset-0",
-          "disabled:opacity-50 disabled:cursor-not-allowed",
-          variantStyles[variant],
-          sizeStyles[size],
-          fullWidth && "w-full",
-          className,
-        )}
+        className={buttonClassName({ variant, size, fullWidth, className })}
         {...rest}
       >
         {loading && (
